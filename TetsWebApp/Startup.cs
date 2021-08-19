@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Prometheus;
 
 namespace TetsWebApp
 {
@@ -47,6 +48,9 @@ namespace TetsWebApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseHttpMetrics();
+            app.UseMetricServer();
 
             app.UseAuthorization();
 
