@@ -5,12 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="App.Metrics.AspNetCore.Core" Version="4.2.0" />
-    <PackageReference Include="App.Metrics.AspNetCore.Endpoints" Version="4.2.0" />
-    <PackageReference Include="App.Metrics.AspNetCore.Tracking" Version="4.2.0" />
-    <PackageReference Include="App.Metrics.Formatters.Prometheus" Version="4.2.0" />
-    <PackageReference Include="prometheus-net" Version="3.1.0" />
-    <PackageReference Include="prometheus-net.AspNetCore" Version="3.1.0" />
+    <PackageReference Include="App.Metrics.AspNetCore.Core" Version="4.3.0-preview.0.30" />
+    <PackageReference Include="App.Metrics.AspNetCore.Endpoints" Version="4.3.0-preview.0.30" />
+    <PackageReference Include="App.Metrics.AspNetCore.Tracking" Version="4.3.0-preview.0.30" />
+    <PackageReference Include="App.Metrics.Formatters.Prometheus" Version="4.3.0-preview.0.30" />
+    <PackageReference Include="prometheus-net" Version="5.0.1" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="5.0.1" />
+    <PackageReference Include="prometheus-net.DotNetRuntime" Version="4.1.0" />
   </ItemGroup>
 
 

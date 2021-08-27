@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
 
 namespace TetsWebApp
 {
@@ -13,14 +14,19 @@ namespace TetsWebApp
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+        
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(opts =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                });
+                    opts.AddEnvironmentVariables("Example");
+                })
+                .ConfigureKestrel(opts =>
+                {
+                    opts.AllowSynchronousIO = true;
+                })
+                .UseStartup<Startup>();
     }
 }
